@@ -7,3 +7,6 @@
 [submodule "submodules/JpegLibrary"]
 	path = submodules/JpegLibrary
 	url = https://github.com/Drake53/JpegLibrary
+[submodule "submodules/Pidgin"]
+	path = submodules/Pidgin
+	url = https://github.com/benjamin-hodgson/Pidgin.git
