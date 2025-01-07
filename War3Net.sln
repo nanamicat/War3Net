@@ -123,6 +123,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A475185A-E
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pidgin", "submodules\Pidgin\Pidgin\Pidgin.csproj", "{922036CD-8BFB-4580-B813-9888336CB5CF}"
+EndProject
 
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -379,6 +381,10 @@ Global
 		{81EC1CD4-62F5-4657-8901-CA2AA18D026C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81EC1CD4-62F5-4657-8901-CA2AA18D026C}.Release|Any CPU.Build.0 = Release|Any CPU
 
+		{922036CD-8BFB-4580-B813-9888336CB5CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922036CD-8BFB-4580-B813-9888336CB5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922036CD-8BFB-4580-B813-9888336CB5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922036CD-8BFB-4580-B813-9888336CB5CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -441,6 +447,7 @@ Global
 		{E1533516-FE29-4F48-A402-4308E8CC3882} = {F40BB975-CDB3-46FC-B152-B9F107CD3476}
 		{81EC1CD4-62F5-4657-8901-CA2AA18D026C} = {F40BB975-CDB3-46FC-B152-B9F107CD3476}
 
+		{922036CD-8BFB-4580-B813-9888336CB5CF} = {F40BB975-CDB3-46FC-B152-B9F107CD3476}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {318B261C-6F0C-4B3B-B29E-2990956B9D01}

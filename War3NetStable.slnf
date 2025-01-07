@@ -15,6 +15,7 @@
       "submodules\\CSharp.lua\\CSharp.lua.CoreSystem\\CSharp.lua.CoreSystem.csproj",
       "submodules\\CSharp.lua\\CSharp.lua\\CSharp.lua.csproj",
       "submodules\\FastMDX\\FastMDX\\FastMDX.csproj",
+      "submodules\\Pidgin\\Pidgin\\Pidgin.csproj",
       "tests\\War3Net.Build.Core.Tests\\War3Net.Build.Core.Tests.csproj",
       "tests\\War3Net.Build.Tests\\War3Net.Build.Tests.csproj",
       "tests\\War3Net.CodeAnalysis.Decompilers.Tests\\War3Net.CodeAnalysis.Decompilers.Tests.csproj",
