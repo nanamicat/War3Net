@@ -86,7 +86,7 @@ namespace War3Net.IO.Mpq
             {
                 if (TryOpenFile(ListFile.FileName, out var listFileStream))
                 {
-                    using var listFileReader = new StreamReader(listFileStream, leaveOpen: false);
+                    using var listFileReader = new StreamReader(listFileStream, null, true, -1, leaveOpen: false);
                     AddFileNames(listFileReader.ReadListFile().FileNames);
                 }
             }
@@ -397,7 +397,7 @@ namespace War3Net.IO.Mpq
 
                     using var rsa = RSA.Create();
 
-                    rsa.ImportFromPem(createOptions.SignaturePrivateKey);
+                    // rsa.ImportFromPem(createOptions.SignaturePrivateKey);
                     var signatureBytes = rsa.SignData(archiveBytes, HashAlgorithmName.MD5, RSASignaturePadding.Pkcs1);
 
                     _baseStream.Position = signaturePosition;

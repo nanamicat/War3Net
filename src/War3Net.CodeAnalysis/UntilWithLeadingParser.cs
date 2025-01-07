@@ -39,85 +39,89 @@ namespace War3Net.CodeAnalysis
             _selector = selector;
         }
 
-        public override bool TryParse(
-            ref ParseState<TToken> state,
-            ref PooledList<Expected<TToken>> expecteds,
-            [MaybeNullWhen(false)] out TResult result)
+        // public override bool TryParse(
+        //     ref ParseState<TToken> state,
+        //     ref PooledList<Expected<TToken>> expecteds,
+        //     [MaybeNullWhen(false)] out TResult result)
+        // {
+        //     if (!_openParser.TryParse(ref state, ref expecteds, out var openResult))
+        //     {
+        //         result = null;
+        //         return false;
+        //     }
+        //
+        //     var items = new List<TItem>();
+        //
+        //     var leadingExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
+        //     var closeExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
+        //     var itemExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
+        //     while (true)
+        //     {
+        //         if (!_leadingParser.TryParse(ref state, ref leadingExpecteds, out var leadingResult))
+        //         {
+        //             expecteds.AddRange(leadingExpecteds.AsSpan());
+        //             leadingExpecteds.Dispose();
+        //             closeExpecteds.Dispose();
+        //             itemExpecteds.Dispose();
+        //             result = null;
+        //             return false;
+        //         }
+        //
+        //         var closeStartLoc = state.Location;
+        //         if (_closeParser.TryParse(ref state, ref closeExpecteds, out var closeResult))
+        //         {
+        //             leadingExpecteds.Dispose();
+        //             closeExpecteds.Dispose();
+        //             itemExpecteds.Dispose();
+        //             result = _selector(openResult, items, leadingResult, closeResult);
+        //             return true;
+        //         }
+        //
+        //         if (state.Location > closeStartLoc)
+        //         {
+        //             expecteds.AddRange(closeExpecteds.AsSpan());
+        //             leadingExpecteds.Dispose();
+        //             closeExpecteds.Dispose();
+        //             itemExpecteds.Dispose();
+        //             result = null;
+        //             return false;
+        //         }
+        //
+        //         var itemStartLoc = state.Location;
+        //         if (!_itemParser.TryParse(ref state, ref itemExpecteds, out var itemResult))
+        //         {
+        //             if (state.Location > itemStartLoc)
+        //             {
+        //                 expecteds.AddRange(itemExpecteds.AsSpan());
+        //             }
+        //             else
+        //             {
+        //                 expecteds.AddRange(itemExpecteds.AsSpan());
+        //                 expecteds.AddRange(closeExpecteds.AsSpan());
+        //             }
+        //
+        //             leadingExpecteds.Dispose();
+        //             closeExpecteds.Dispose();
+        //             itemExpecteds.Dispose();
+        //             result = null;
+        //             return false;
+        //         }
+        //
+        //         leadingExpecteds.Clear();
+        //         closeExpecteds.Clear();
+        //         itemExpecteds.Clear();
+        //
+        //         if (state.Location <= itemStartLoc)
+        //         {
+        //             throw new InvalidOperationException("UntilWithLeading() used with a parser which consumed no input");
+        //         }
+        //
+        //         items.Add(_itemLeadingSelector(leadingResult, itemResult));
+        //     }
+        // }
+        public override InternalResult<TResult> Parse(ref ParseState<TToken> state, ref ExpectedCollector<TToken> expecteds)
         {
-            if (!_openParser.TryParse(ref state, ref expecteds, out var openResult))
-            {
-                result = null;
-                return false;
-            }
-
-            var items = new List<TItem>();
-
-            var leadingExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
-            var closeExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
-            var itemExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
-            while (true)
-            {
-                if (!_leadingParser.TryParse(ref state, ref leadingExpecteds, out var leadingResult))
-                {
-                    expecteds.AddRange(leadingExpecteds.AsSpan());
-                    leadingExpecteds.Dispose();
-                    closeExpecteds.Dispose();
-                    itemExpecteds.Dispose();
-                    result = null;
-                    return false;
-                }
-
-                var closeStartLoc = state.Location;
-                if (_closeParser.TryParse(ref state, ref closeExpecteds, out var closeResult))
-                {
-                    leadingExpecteds.Dispose();
-                    closeExpecteds.Dispose();
-                    itemExpecteds.Dispose();
-                    result = _selector(openResult, items, leadingResult, closeResult);
-                    return true;
-                }
-
-                if (state.Location > closeStartLoc)
-                {
-                    expecteds.AddRange(closeExpecteds.AsSpan());
-                    leadingExpecteds.Dispose();
-                    closeExpecteds.Dispose();
-                    itemExpecteds.Dispose();
-                    result = null;
-                    return false;
-                }
-
-                var itemStartLoc = state.Location;
-                if (!_itemParser.TryParse(ref state, ref itemExpecteds, out var itemResult))
-                {
-                    if (state.Location > itemStartLoc)
-                    {
-                        expecteds.AddRange(itemExpecteds.AsSpan());
-                    }
-                    else
-                    {
-                        expecteds.AddRange(itemExpecteds.AsSpan());
-                        expecteds.AddRange(closeExpecteds.AsSpan());
-                    }
-
-                    leadingExpecteds.Dispose();
-                    closeExpecteds.Dispose();
-                    itemExpecteds.Dispose();
-                    result = null;
-                    return false;
-                }
-
-                leadingExpecteds.Clear();
-                closeExpecteds.Clear();
-                itemExpecteds.Clear();
-
-                if (state.Location <= itemStartLoc)
-                {
-                    throw new InvalidOperationException("UntilWithLeading() used with a parser which consumed no input");
-                }
-
-                items.Add(_itemLeadingSelector(leadingResult, itemResult));
-            }
+            throw new NotImplementedException();
         }
     }
 }

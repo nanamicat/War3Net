@@ -56,7 +56,7 @@ namespace War3Net.Build.Extensions
             var compilationUnit = mapScriptBuilder.Build(map);
 
             using var stream = new MemoryStream();
-            using (var writer = new StreamWriter(stream, _defaultEncoding, leaveOpen: true))
+            using (var writer = new StreamWriter(stream, _defaultEncoding, -1, leaveOpen: true))
             {
                 var renderer = new JassRenderer(writer);
                 renderer.Render(compilationUnit);
@@ -134,7 +134,7 @@ namespace War3Net.Build.Extensions
             transpiler.RegisterJassFile(JassSyntaxFactory.ParseCompilationUnit(File.ReadAllText(blizzardJPath)));
 
             var luaCompilationUnit = transpiler.Transpile(mapScriptBuilder.Build(map));
-            using (var writer = new StreamWriter(stream, _defaultEncoding, leaveOpen: true))
+            using (var writer = new StreamWriter(stream, _defaultEncoding, -1, leaveOpen: true))
             {
                 var luaRenderOptions = new LuaSyntaxGenerator.SettingInfo
                 {

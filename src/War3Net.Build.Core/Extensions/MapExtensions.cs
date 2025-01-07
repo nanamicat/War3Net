@@ -416,7 +416,7 @@ namespace War3Net.Build.Extensions
             }
 
             var memoryStream = new MemoryStream();
-            using var writer = new StreamWriter(memoryStream, encoding ?? _defaultEncoding, leaveOpen: true);
+            using var writer = new StreamWriter(memoryStream, encoding ?? _defaultEncoding, -1, leaveOpen: true);
 
             writer.Write(map.Script);
             writer.Flush();
@@ -448,7 +448,7 @@ namespace War3Net.Build.Extensions
             }
 
             var memoryStream = new MemoryStream();
-            using var writer = new StreamWriter(memoryStream, encoding ?? _defaultEncoding, leaveOpen: true);
+            using var writer = new StreamWriter(memoryStream, encoding ?? _defaultEncoding, -1, leaveOpen: true);
 
             writer.WriteTriggerStrings(map.TriggerStrings);
             writer.Flush();
@@ -634,7 +634,7 @@ namespace War3Net.Build.Extensions
 
         public static void SetScriptFile(this Map map, Stream stream, Encoding? encoding = null, bool leaveOpen = false)
         {
-            using var reader = new StreamReader(stream, encoding ?? _defaultEncoding, leaveOpen: leaveOpen);
+            using var reader = new StreamReader(stream, encoding ?? _defaultEncoding, true, -1, leaveOpen: leaveOpen);
             map.Script = reader.ReadToEnd();
         }
 
@@ -646,7 +646,7 @@ namespace War3Net.Build.Extensions
 
         public static void SetTriggerStringsFile(this Map map, Stream stream, Encoding? encoding = null, bool leaveOpen = false)
         {
-            using var reader = new StreamReader(stream, encoding ?? _defaultEncoding, leaveOpen: leaveOpen);
+            using var reader = new StreamReader(stream, encoding ?? _defaultEncoding, true, -1, leaveOpen: leaveOpen);
             map.TriggerStrings = reader.ReadTriggerStrings();
         }
 

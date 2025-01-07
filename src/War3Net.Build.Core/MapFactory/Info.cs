@@ -35,12 +35,12 @@ namespace War3Net.Build
                 throw new ArgumentOutOfRangeException(nameof(mapHeight));
             }
 
-            if (tileset == Tileset.Unspecified || !Enum.IsDefined(tileset))
+            if (tileset == Tileset.Unspecified || !Enum.IsDefined(tileset.GetType(), tileset))
             {
                 throw new InvalidEnumArgumentException(nameof(tileset), (int)tileset, typeof(Tileset));
             }
 
-            if (!Enum.IsDefined(scriptLanguage))
+            if (!Enum.IsDefined(scriptLanguage.GetType(), scriptLanguage))
             {
                 throw new InvalidEnumArgumentException(nameof(scriptLanguage), (int)scriptLanguage, typeof(ScriptLanguage));
             }

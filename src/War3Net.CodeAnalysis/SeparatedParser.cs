@@ -25,58 +25,62 @@ namespace War3Net.CodeAnalysis
             _separatorParser = separatorParser;
         }
 
-        public override bool TryParse(
-            ref ParseState<TToken> state,
-            ref PooledList<Expected<TToken>> expecteds,
-            [MaybeNullWhen(false)] out SeparatedSyntaxList<TItem, TSeparator> result)
+        // public override bool TryParse(
+        //     ref ParseState<TToken> state,
+        //     ref PooledList<Expected<TToken>> expecteds,
+        //     [MaybeNullWhen(false)] out SeparatedSyntaxList<TItem, TSeparator> result)
+        // {
+        //     if (!_itemParser.TryParse(ref state, ref expecteds, out var firstResult))
+        //     {
+        //         result = SeparatedSyntaxList<TItem, TSeparator>.Empty;
+        //         return true;
+        //     }
+        //
+        //     var builder = SeparatedSyntaxList<TItem, TSeparator>.CreateBuilder(firstResult);
+        //
+        //     var childExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
+        //     while (true)
+        //     {
+        //         var separatorStartLoc = state.Location;
+        //         if (!_separatorParser.TryParse(ref state, ref childExpecteds, out var separatorResult))
+        //         {
+        //             if (state.Location <= separatorStartLoc)
+        //             {
+        //                 childExpecteds.Dispose();
+        //                 result = builder.ToSeparatedSyntaxList();
+        //                 return true;
+        //             }
+        //
+        //             expecteds.AddRange(childExpecteds.AsSpan());
+        //             childExpecteds.Dispose();
+        //             result = null;
+        //             return false;
+        //         }
+        //
+        //         childExpecteds.Clear();
+        //
+        //         var itemStartLoc = state.Location;
+        //         if (!_itemParser.TryParse(ref state, ref childExpecteds, out var itemResult))
+        //         {
+        //             expecteds.AddRange(childExpecteds.AsSpan());
+        //             childExpecteds.Dispose();
+        //             result = null;
+        //             return false;
+        //         }
+        //
+        //         childExpecteds.Clear();
+        //
+        //         if (state.Location <= itemStartLoc)
+        //         {
+        //             throw new InvalidOperationException("Separated() used with a parser which consumed no input");
+        //         }
+        //
+        //         builder.Add(separatorResult, itemResult);
+        //     }
+        // }
+        public override InternalResult<SeparatedSyntaxList<TItem, TSeparator>> Parse(ref ParseState<TToken> state, ref ExpectedCollector<TToken> expecteds)
         {
-            if (!_itemParser.TryParse(ref state, ref expecteds, out var firstResult))
-            {
-                result = SeparatedSyntaxList<TItem, TSeparator>.Empty;
-                return true;
-            }
-
-            var builder = SeparatedSyntaxList<TItem, TSeparator>.CreateBuilder(firstResult);
-
-            var childExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
-            while (true)
-            {
-                var separatorStartLoc = state.Location;
-                if (!_separatorParser.TryParse(ref state, ref childExpecteds, out var separatorResult))
-                {
-                    if (state.Location <= separatorStartLoc)
-                    {
-                        childExpecteds.Dispose();
-                        result = builder.ToSeparatedSyntaxList();
-                        return true;
-                    }
-
-                    expecteds.AddRange(childExpecteds.AsSpan());
-                    childExpecteds.Dispose();
-                    result = null;
-                    return false;
-                }
-
-                childExpecteds.Clear();
-
-                var itemStartLoc = state.Location;
-                if (!_itemParser.TryParse(ref state, ref childExpecteds, out var itemResult))
-                {
-                    expecteds.AddRange(childExpecteds.AsSpan());
-                    childExpecteds.Dispose();
-                    result = null;
-                    return false;
-                }
-
-                childExpecteds.Clear();
-
-                if (state.Location <= itemStartLoc)
-                {
-                    throw new InvalidOperationException("Separated() used with a parser which consumed no input");
-                }
-
-                builder.Add(separatorResult, itemResult);
-            }
+            throw new NotImplementedException();
         }
     }
 }

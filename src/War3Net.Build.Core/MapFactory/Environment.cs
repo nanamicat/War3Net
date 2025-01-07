@@ -53,7 +53,7 @@ namespace War3Net.Build
                 throw new ArgumentOutOfRangeException(nameof(cliffLevel));
             }
 
-            if (!Enum.IsDefined(waterLevel))
+            if (!Enum.IsDefined(waterLevel.GetType(), waterLevel))
             {
                 throw new InvalidEnumArgumentException(nameof(waterLevel), (int)waterLevel, typeof(WaterLevel));
             }

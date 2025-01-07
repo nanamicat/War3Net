@@ -285,7 +285,7 @@ namespace War3Net.Build.Extensions
             }
 
             using var memoryStream = new MemoryStream();
-            using var writer = new StreamWriter(memoryStream, encoding ?? _defaultEncoding, leaveOpen: true);
+            using var writer = new StreamWriter(memoryStream, encoding ?? _defaultEncoding, -1, leaveOpen: true);
 
             writer.WriteTriggerStrings(campaign.TriggerStrings);
             writer.Flush();
@@ -391,7 +391,7 @@ namespace War3Net.Build.Extensions
 
         public static void SetTriggerStringsFile(this Campaign campaign, Stream stream, Encoding? encoding = null, bool leaveOpen = false)
         {
-            using var reader = new StreamReader(stream, encoding ?? _defaultEncoding, leaveOpen: leaveOpen);
+            using var reader = new StreamReader(stream, encoding ?? _defaultEncoding, true, -1, leaveOpen: leaveOpen);
             campaign.TriggerStrings = reader.ReadTriggerStrings();
         }
 

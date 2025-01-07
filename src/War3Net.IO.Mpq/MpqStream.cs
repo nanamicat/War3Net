@@ -588,7 +588,7 @@ namespace War3Net.IO.Mpq
             return bytesToCopy;
         }
 
-        [MemberNotNull(nameof(_currentData))]
+        // [MemberNotNull(nameof(_currentData))]
         private void BufferData()
         {
             if (!_isSingleUnit)

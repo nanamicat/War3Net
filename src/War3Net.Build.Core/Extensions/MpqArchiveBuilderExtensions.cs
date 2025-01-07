@@ -38,7 +38,7 @@ namespace War3Net.Build.Extensions
                 var campaignTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == CampaignTriggerStringsHashedFileName);
                 if (campaignTriggerStringsFile is not null)
                 {
-                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, _defaultEncoding, leaveOpen: true);
+                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, _defaultEncoding, true, -1, leaveOpen: true);
                     var campaignTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                     campaignTriggerStringsFile.MpqStream.Position = 0;
 
@@ -61,7 +61,7 @@ namespace War3Net.Build.Extensions
                     var mapTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == MapTriggerStringsHashedFileName);
                     if (mapTriggerStringsFile is not null)
                     {
-                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, _defaultEncoding, leaveOpen: true);
+                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, _defaultEncoding, true, -1, leaveOpen: true);
                         var mapTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                         mapTriggerStringsFile.MpqStream.Position = 0;
 
@@ -92,7 +92,7 @@ namespace War3Net.Build.Extensions
                 var campaignTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == CampaignTriggerStringsHashedFileName);
                 if (campaignTriggerStringsFile is not null)
                 {
-                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, _defaultEncoding, leaveOpen: true);
+                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, _defaultEncoding, true, -1, leaveOpen: true);
                     var campaignTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                     campaignTriggerStringsFile.MpqStream.Position = 0;
 
@@ -115,7 +115,7 @@ namespace War3Net.Build.Extensions
                     var mapTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == MapTriggerStringsHashedFileName);
                     if (mapTriggerStringsFile is not null)
                     {
-                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, _defaultEncoding, leaveOpen: true);
+                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, _defaultEncoding, true, -1, leaveOpen: true);
                         var mapTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                         mapTriggerStringsFile.MpqStream.Position = 0;
 
@@ -146,7 +146,7 @@ namespace War3Net.Build.Extensions
                 var campaignTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == CampaignTriggerStringsHashedFileName);
                 if (campaignTriggerStringsFile is not null)
                 {
-                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, encoding, leaveOpen: true);
+                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, encoding, true, -1, leaveOpen: true);
                     var campaignTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                     campaignTriggerStringsFile.MpqStream.Position = 0;
 
@@ -169,7 +169,7 @@ namespace War3Net.Build.Extensions
                     var mapTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == MapTriggerStringsHashedFileName);
                     if (mapTriggerStringsFile is not null)
                     {
-                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, encoding, leaveOpen: true);
+                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, encoding, true, -1, leaveOpen: true);
                         var mapTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                         mapTriggerStringsFile.MpqStream.Position = 0;
 
@@ -200,7 +200,7 @@ namespace War3Net.Build.Extensions
                 var campaignTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == CampaignTriggerStringsHashedFileName);
                 if (campaignTriggerStringsFile is not null)
                 {
-                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, encoding, leaveOpen: true);
+                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, encoding, true, -1, leaveOpen: true);
                     var campaignTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                     campaignTriggerStringsFile.MpqStream.Position = 0;
 
@@ -223,7 +223,7 @@ namespace War3Net.Build.Extensions
                     var mapTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == MapTriggerStringsHashedFileName);
                     if (mapTriggerStringsFile is not null)
                     {
-                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, encoding, leaveOpen: true);
+                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, encoding, true, -1, leaveOpen: true);
                         var mapTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                         mapTriggerStringsFile.MpqStream.Position = 0;
 
@@ -254,7 +254,7 @@ namespace War3Net.Build.Extensions
                 var campaignTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == CampaignTriggerStringsHashedFileName);
                 if (campaignTriggerStringsFile is not null)
                 {
-                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, _defaultEncoding, leaveOpen: true);
+                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, _defaultEncoding, true, -1, leaveOpen: true);
                     var campaignTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                     campaignTriggerStringsFile.MpqStream.Position = 0;
 
@@ -277,7 +277,7 @@ namespace War3Net.Build.Extensions
                     var mapTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == MapTriggerStringsHashedFileName);
                     if (mapTriggerStringsFile is not null)
                     {
-                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, _defaultEncoding, leaveOpen: true);
+                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, _defaultEncoding, true, -1, leaveOpen: true);
                         var mapTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                         mapTriggerStringsFile.MpqStream.Position = 0;
 
@@ -308,7 +308,7 @@ namespace War3Net.Build.Extensions
                 var campaignTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == CampaignTriggerStringsHashedFileName);
                 if (campaignTriggerStringsFile is not null)
                 {
-                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, _defaultEncoding, leaveOpen: true);
+                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, _defaultEncoding, true, -1, leaveOpen: true);
                     var campaignTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                     campaignTriggerStringsFile.MpqStream.Position = 0;
 
@@ -331,7 +331,7 @@ namespace War3Net.Build.Extensions
                     var mapTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == MapTriggerStringsHashedFileName);
                     if (mapTriggerStringsFile is not null)
                     {
-                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, _defaultEncoding, leaveOpen: true);
+                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, _defaultEncoding, true, -1, leaveOpen: true);
                         var mapTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                         mapTriggerStringsFile.MpqStream.Position = 0;
 
@@ -362,7 +362,7 @@ namespace War3Net.Build.Extensions
                 var campaignTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == CampaignTriggerStringsHashedFileName);
                 if (campaignTriggerStringsFile is not null)
                 {
-                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, encoding, leaveOpen: true);
+                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, encoding, true, -1, leaveOpen: true);
                     var campaignTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                     campaignTriggerStringsFile.MpqStream.Position = 0;
 
@@ -385,7 +385,7 @@ namespace War3Net.Build.Extensions
                     var mapTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == MapTriggerStringsHashedFileName);
                     if (mapTriggerStringsFile is not null)
                     {
-                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, encoding, leaveOpen: true);
+                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, encoding, true, -1, leaveOpen: true);
                         var mapTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                         mapTriggerStringsFile.MpqStream.Position = 0;
 
@@ -416,7 +416,7 @@ namespace War3Net.Build.Extensions
                 var campaignTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == CampaignTriggerStringsHashedFileName);
                 if (campaignTriggerStringsFile is not null)
                 {
-                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, encoding, leaveOpen: true);
+                    using var triggerStringsReader = new StreamReader(campaignTriggerStringsFile.MpqStream, encoding, true, -1, leaveOpen: true);
                     var campaignTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                     campaignTriggerStringsFile.MpqStream.Position = 0;
 
@@ -439,7 +439,7 @@ namespace War3Net.Build.Extensions
                     var mapTriggerStringsFile = mpqFiles.FirstOrDefault(file => file.Name == MapTriggerStringsHashedFileName);
                     if (mapTriggerStringsFile is not null)
                     {
-                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, encoding, leaveOpen: true);
+                        using var triggerStringsReader = new StreamReader(mapTriggerStringsFile.MpqStream, encoding, true, -1, leaveOpen: true);
                         var mapTriggerStrings = triggerStringsReader.ReadTriggerStrings();
                         mapTriggerStringsFile.MpqStream.Position = 0;
 

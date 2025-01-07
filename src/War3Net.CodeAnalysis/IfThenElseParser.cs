@@ -64,199 +64,203 @@ namespace War3Net.CodeAnalysis
             _resultSelector = resultSelector;
         }
 
-        public override bool TryParse(
-            ref ParseState<TToken> state,
-            ref PooledList<Expected<TToken>> expecteds,
-            [MaybeNullWhen(false)] out TResult result)
+        // public override bool TryParse(
+        //     ref ParseState<TToken> state,
+        //     ref PooledList<Expected<TToken>> expecteds,
+        //     [MaybeNullWhen(false)] out TResult result)
+        // {
+        //     if (!_ifDeclaratorParser.TryParse(ref state, ref expecteds, out var ifResult))
+        //     {
+        //         result = null;
+        //         return false;
+        //     }
+        //
+        //     var items = new List<TItem>();
+        //
+        //     var elseIfDeclarator = (TElseIfDeclarator?)null;
+        //     var elseDeclarator = (TElseDeclarator?)null;
+        //
+        //     var ifClause = (TIfClause?)null;
+        //     var elseIfClauses = new List<TElseIfClause>();
+        //     var elseClause = (TElseClause?)null;
+        //
+        //     var leadingExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
+        //     var elseIfExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
+        //     var elseExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
+        //     var endIfExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
+        //     var itemExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
+        //     while (true)
+        //     {
+        //         if (!_leadingParser.TryParse(ref state, ref leadingExpecteds, out var leadingResult))
+        //         {
+        //             expecteds.AddRange(leadingExpecteds.AsSpan());
+        //             leadingExpecteds.Dispose();
+        //             elseIfExpecteds.Dispose();
+        //             elseExpecteds.Dispose();
+        //             endIfExpecteds.Dispose();
+        //             itemExpecteds.Dispose();
+        //             result = null;
+        //             return false;
+        //         }
+        //
+        //         var terminatorStartLoc = state.Location;
+        //         if (_endIfParser.TryParse(ref state, ref endIfExpecteds, out var endIfResult))
+        //         {
+        //             leadingExpecteds.Dispose();
+        //             elseIfExpecteds.Dispose();
+        //             elseExpecteds.Dispose();
+        //             endIfExpecteds.Dispose();
+        //             itemExpecteds.Dispose();
+        //
+        //             if (ifClause is null)
+        //             {
+        //                 ifClause = _ifClauseSelector(ifResult, items);
+        //             }
+        //             else if (elseDeclarator is not null)
+        //             {
+        //                 elseClause = _elseClauseSelector(elseDeclarator, items);
+        //             }
+        //             else
+        //             {
+        //                 elseIfClauses.Add(_elseIfClauseSelector(elseIfDeclarator, items));
+        //             }
+        //
+        //             result = _resultSelector(ifClause, elseIfClauses, elseClause, leadingResult, endIfResult);
+        //             return true;
+        //         }
+        //
+        //         if (state.Location > terminatorStartLoc)
+        //         {
+        //             expecteds.AddRange(endIfExpecteds.AsSpan());
+        //             leadingExpecteds.Dispose();
+        //             elseIfExpecteds.Dispose();
+        //             elseExpecteds.Dispose();
+        //             endIfExpecteds.Dispose();
+        //             itemExpecteds.Dispose();
+        //             result = null;
+        //             return false;
+        //         }
+        //
+        //         if (elseDeclarator is null)
+        //         {
+        //             if (_elseDeclaratorParser.TryParse(ref state, ref elseExpecteds, out var elseResult))
+        //             {
+        //                 leadingExpecteds.Clear();
+        //                 elseExpecteds.Clear();
+        //                 endIfExpecteds.Clear();
+        //
+        //                 if (ifClause is null)
+        //                 {
+        //                     ifClause = _ifClauseSelector(ifResult, items);
+        //                 }
+        //                 else
+        //                 {
+        //                     elseIfClauses.Add(_elseIfClauseSelector(elseIfDeclarator, items));
+        //                 }
+        //
+        //                 elseDeclarator = _elseDeclaratorLeadingSelector(leadingResult, elseResult);
+        //
+        //                 items.Clear();
+        //                 continue;
+        //             }
+        //
+        //             if (state.Location > terminatorStartLoc)
+        //             {
+        //                 expecteds.AddRange(elseExpecteds.AsSpan());
+        //                 leadingExpecteds.Dispose();
+        //                 elseIfExpecteds.Dispose();
+        //                 elseExpecteds.Dispose();
+        //                 endIfExpecteds.Dispose();
+        //                 itemExpecteds.Dispose();
+        //                 result = null;
+        //                 return false;
+        //             }
+        //
+        //             if (_elseIfDeclaratorParser.TryParse(ref state, ref elseIfExpecteds, out var elseIfResult))
+        //             {
+        //                 leadingExpecteds.Clear();
+        //                 elseIfExpecteds.Clear();
+        //                 elseExpecteds.Clear();
+        //                 endIfExpecteds.Clear();
+        //
+        //                 if (state.Location <= terminatorStartLoc)
+        //                 {
+        //                     throw new InvalidOperationException("IfThenElse() used with an elseif parser which consumed no input");
+        //                 }
+        //
+        //                 if (ifClause is null)
+        //                 {
+        //                     ifClause = _ifClauseSelector(ifResult, items);
+        //                 }
+        //                 else
+        //                 {
+        //                     elseIfClauses.Add(_elseIfClauseSelector(elseIfDeclarator, items));
+        //                 }
+        //
+        //                 elseIfDeclarator = _elseIfDeclaratorLeadingSelector(leadingResult, elseIfResult);
+        //
+        //                 items.Clear();
+        //                 continue;
+        //             }
+        //
+        //             if (state.Location > terminatorStartLoc)
+        //             {
+        //                 expecteds.AddRange(elseIfExpecteds.AsSpan());
+        //                 leadingExpecteds.Dispose();
+        //                 elseIfExpecteds.Dispose();
+        //                 elseExpecteds.Dispose();
+        //                 endIfExpecteds.Dispose();
+        //                 itemExpecteds.Dispose();
+        //                 result = null;
+        //                 return false;
+        //             }
+        //         }
+        //
+        //         var itemStartLoc = state.Location;
+        //         if (!_itemParser.TryParse(ref state, ref itemExpecteds, out var itemResult))
+        //         {
+        //             if (state.Location > itemStartLoc)
+        //             {
+        //                 expecteds.AddRange(itemExpecteds.AsSpan());
+        //             }
+        //             else
+        //             {
+        //                 if (elseDeclarator is null)
+        //                 {
+        //                     expecteds.AddRange(elseIfExpecteds.AsSpan());
+        //                     expecteds.AddRange(elseExpecteds.AsSpan());
+        //                 }
+        //
+        //                 expecteds.AddRange(endIfExpecteds.AsSpan());
+        //                 expecteds.AddRange(itemExpecteds.AsSpan());
+        //             }
+        //
+        //             leadingExpecteds.Dispose();
+        //             elseIfExpecteds.Dispose();
+        //             elseExpecteds.Dispose();
+        //             endIfExpecteds.Dispose();
+        //             itemExpecteds.Dispose();
+        //             result = null;
+        //             return false;
+        //         }
+        //
+        //         leadingExpecteds.Clear();
+        //         elseIfExpecteds.Clear();
+        //         elseExpecteds.Clear();
+        //         endIfExpecteds.Clear();
+        //         itemExpecteds.Clear();
+        //
+        //         if (state.Location <= itemStartLoc)
+        //         {
+        //             throw new InvalidOperationException("IfThenElse() used with a parser which consumed no input");
+        //         }
+        //
+        //         items.Add(_itemLeadingSelector(leadingResult, itemResult));
+        //     }
+        // }
+        public override InternalResult<TResult> Parse(ref ParseState<TToken> state, ref ExpectedCollector<TToken> expecteds)
         {
-            if (!_ifDeclaratorParser.TryParse(ref state, ref expecteds, out var ifResult))
-            {
-                result = null;
-                return false;
-            }
-
-            var items = new List<TItem>();
-
-            var elseIfDeclarator = (TElseIfDeclarator?)null;
-            var elseDeclarator = (TElseDeclarator?)null;
-
-            var ifClause = (TIfClause?)null;
-            var elseIfClauses = new List<TElseIfClause>();
-            var elseClause = (TElseClause?)null;
-
-            var leadingExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
-            var elseIfExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
-            var elseExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
-            var endIfExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
-            var itemExpecteds = new PooledList<Expected<TToken>>(state.Configuration.ArrayPoolProvider.GetArrayPool<Expected<TToken>>());
-            while (true)
-            {
-                if (!_leadingParser.TryParse(ref state, ref leadingExpecteds, out var leadingResult))
-                {
-                    expecteds.AddRange(leadingExpecteds.AsSpan());
-                    leadingExpecteds.Dispose();
-                    elseIfExpecteds.Dispose();
-                    elseExpecteds.Dispose();
-                    endIfExpecteds.Dispose();
-                    itemExpecteds.Dispose();
-                    result = null;
-                    return false;
-                }
-
-                var terminatorStartLoc = state.Location;
-                if (_endIfParser.TryParse(ref state, ref endIfExpecteds, out var endIfResult))
-                {
-                    leadingExpecteds.Dispose();
-                    elseIfExpecteds.Dispose();
-                    elseExpecteds.Dispose();
-                    endIfExpecteds.Dispose();
-                    itemExpecteds.Dispose();
-
-                    if (ifClause is null)
-                    {
-                        ifClause = _ifClauseSelector(ifResult, items);
-                    }
-                    else if (elseDeclarator is not null)
-                    {
-                        elseClause = _elseClauseSelector(elseDeclarator, items);
-                    }
-                    else
-                    {
-                        elseIfClauses.Add(_elseIfClauseSelector(elseIfDeclarator, items));
-                    }
-
-                    result = _resultSelector(ifClause, elseIfClauses, elseClause, leadingResult, endIfResult);
-                    return true;
-                }
-
-                if (state.Location > terminatorStartLoc)
-                {
-                    expecteds.AddRange(endIfExpecteds.AsSpan());
-                    leadingExpecteds.Dispose();
-                    elseIfExpecteds.Dispose();
-                    elseExpecteds.Dispose();
-                    endIfExpecteds.Dispose();
-                    itemExpecteds.Dispose();
-                    result = null;
-                    return false;
-                }
-
-                if (elseDeclarator is null)
-                {
-                    if (_elseDeclaratorParser.TryParse(ref state, ref elseExpecteds, out var elseResult))
-                    {
-                        leadingExpecteds.Clear();
-                        elseExpecteds.Clear();
-                        endIfExpecteds.Clear();
-
-                        if (ifClause is null)
-                        {
-                            ifClause = _ifClauseSelector(ifResult, items);
-                        }
-                        else
-                        {
-                            elseIfClauses.Add(_elseIfClauseSelector(elseIfDeclarator, items));
-                        }
-
-                        elseDeclarator = _elseDeclaratorLeadingSelector(leadingResult, elseResult);
-
-                        items.Clear();
-                        continue;
-                    }
-
-                    if (state.Location > terminatorStartLoc)
-                    {
-                        expecteds.AddRange(elseExpecteds.AsSpan());
-                        leadingExpecteds.Dispose();
-                        elseIfExpecteds.Dispose();
-                        elseExpecteds.Dispose();
-                        endIfExpecteds.Dispose();
-                        itemExpecteds.Dispose();
-                        result = null;
-                        return false;
-                    }
-
-                    if (_elseIfDeclaratorParser.TryParse(ref state, ref elseIfExpecteds, out var elseIfResult))
-                    {
-                        leadingExpecteds.Clear();
-                        elseIfExpecteds.Clear();
-                        elseExpecteds.Clear();
-                        endIfExpecteds.Clear();
-
-                        if (state.Location <= terminatorStartLoc)
-                        {
-                            throw new InvalidOperationException("IfThenElse() used with an elseif parser which consumed no input");
-                        }
-
-                        if (ifClause is null)
-                        {
-                            ifClause = _ifClauseSelector(ifResult, items);
-                        }
-                        else
-                        {
-                            elseIfClauses.Add(_elseIfClauseSelector(elseIfDeclarator, items));
-                        }
-
-                        elseIfDeclarator = _elseIfDeclaratorLeadingSelector(leadingResult, elseIfResult);
-
-                        items.Clear();
-                        continue;
-                    }
-
-                    if (state.Location > terminatorStartLoc)
-                    {
-                        expecteds.AddRange(elseIfExpecteds.AsSpan());
-                        leadingExpecteds.Dispose();
-                        elseIfExpecteds.Dispose();
-                        elseExpecteds.Dispose();
-                        endIfExpecteds.Dispose();
-                        itemExpecteds.Dispose();
-                        result = null;
-                        return false;
-                    }
-                }
-
-                var itemStartLoc = state.Location;
-                if (!_itemParser.TryParse(ref state, ref itemExpecteds, out var itemResult))
-                {
-                    if (state.Location > itemStartLoc)
-                    {
-                        expecteds.AddRange(itemExpecteds.AsSpan());
-                    }
-                    else
-                    {
-                        if (elseDeclarator is null)
-                        {
-                            expecteds.AddRange(elseIfExpecteds.AsSpan());
-                            expecteds.AddRange(elseExpecteds.AsSpan());
-                        }
-
-                        expecteds.AddRange(endIfExpecteds.AsSpan());
-                        expecteds.AddRange(itemExpecteds.AsSpan());
-                    }
-
-                    leadingExpecteds.Dispose();
-                    elseIfExpecteds.Dispose();
-                    elseExpecteds.Dispose();
-                    endIfExpecteds.Dispose();
-                    itemExpecteds.Dispose();
-                    result = null;
-                    return false;
-                }
-
-                leadingExpecteds.Clear();
-                elseIfExpecteds.Clear();
-                elseExpecteds.Clear();
-                endIfExpecteds.Clear();
-                itemExpecteds.Clear();
-
-                if (state.Location <= itemStartLoc)
-                {
-                    throw new InvalidOperationException("IfThenElse() used with a parser which consumed no input");
-                }
-
-                items.Add(_itemLeadingSelector(leadingResult, itemResult));
-            }
+            throw new NotImplementedException();
         }
     }
 }
