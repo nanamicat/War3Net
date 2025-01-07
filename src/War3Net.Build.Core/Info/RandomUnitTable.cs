@@ -22,9 +22,9 @@ namespace War3Net.Build.Info
 
         public string Name { get; set; }
 
-        public List<WidgetType> Types { get; init; } = new();
+        public List<WidgetType> Types { get; set; } = new();
 
-        public List<RandomUnitSet> UnitSets { get; init; } = new();
+        public List<RandomUnitSet> UnitSets { get; set; } = new();
 
         public override string ToString() => Name;
     }

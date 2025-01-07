@@ -20,7 +20,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Parameters = parameters;
         }
 
-        public ImmutableArray<JassParameterSyntax> Parameters { get; init; }
+        public ImmutableArray<JassParameterSyntax> Parameters { get; set; }
 
         public bool Equals(JassParameterListSyntax? other)
         {

@@ -14,7 +14,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Declarator = declarator;
         }
 
-        public IVariableDeclaratorSyntax Declarator { get; init; }
+        public IVariableDeclaratorSyntax Declarator { get; set; }
 
         public bool Equals(IGlobalDeclarationSyntax? other)
         {

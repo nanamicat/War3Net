@@ -11,9 +11,9 @@ namespace War3Net.CodeAnalysis.Jass
     {
         private static readonly JassRendererOptions _default = new JassRendererOptions();
 
-        public string NewLineString { get; init; }
+        public string NewLineString { get; set; }
 
-        public string IndentationString { get; init; }
+        public string IndentationString { get; set; }
 
         public JassRendererOptions()
         {

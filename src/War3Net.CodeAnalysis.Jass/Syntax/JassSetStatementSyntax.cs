@@ -18,11 +18,11 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Value = value;
         }
 
-        public JassIdentifierNameSyntax IdentifierName { get; init; }
+        public JassIdentifierNameSyntax IdentifierName { get; set; }
 
-        public IExpressionSyntax? Indexer { get; init; }
+        public IExpressionSyntax? Indexer { get; set; }
 
-        public JassEqualsValueClauseSyntax Value { get; init; }
+        public JassEqualsValueClauseSyntax Value { get; set; }
 
         public bool Equals(IStatementSyntax? other)
         {

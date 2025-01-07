@@ -32,11 +32,11 @@ namespace War3Net.IO.Mpq
 
         public AttributesFlags Flags { get; set; }
 
-        public List<int> Crc32s { get; init; } = new();
+        public List<int> Crc32s { get; set; } = new();
 
-        public List<DateTime> DateTimes { get; init; } = new();
+        public List<DateTime> DateTimes { get; set; } = new();
 
-        public List<byte[]> Unk0x04s { get; init; } = new();
+        public List<byte[]> Unk0x04s { get; set; } = new();
 
         internal void ReadFrom(BinaryReader reader)
         {

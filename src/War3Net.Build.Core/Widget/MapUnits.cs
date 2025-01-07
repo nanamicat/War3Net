@@ -37,7 +37,7 @@ namespace War3Net.Build.Widget
 
         public bool UseNewFormat { get; set; }
 
-        public List<UnitData> Units { get; init; } = new();
+        public List<UnitData> Units { get; set; } = new();
 
         public override string ToString() => FileName;
     }

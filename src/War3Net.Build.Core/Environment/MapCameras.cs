@@ -28,7 +28,7 @@ namespace War3Net.Build.Environment
 
         public bool UseNewFormat { get; set; }
 
-        public List<Camera> Cameras { get; init; } = new();
+        public List<Camera> Cameras { get; set; } = new();
 
         public override string ToString() => FileName;
     }

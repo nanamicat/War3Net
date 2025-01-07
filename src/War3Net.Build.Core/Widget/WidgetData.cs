@@ -36,7 +36,7 @@ namespace War3Net.Build.Widget
 
         public int MapItemTableId { get; set; } = -1;
 
-        public List<RandomItemSet> ItemTableSets { get; init; } = new();
+        public List<RandomItemSet> ItemTableSets { get; set; } = new();
 
         public int CreationNumber { get; set; }
 

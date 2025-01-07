@@ -18,7 +18,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Statements = statements;
         }
 
-        public ImmutableArray<IStatementSyntax> Statements { get; init; }
+        public ImmutableArray<IStatementSyntax> Statements { get; set; }
 
         public bool Equals(JassStatementListSyntax? other)
         {

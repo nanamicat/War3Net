@@ -16,7 +16,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Action = action;
         }
 
-        public IStatementLineSyntax Action { get; init; }
+        public IStatementLineSyntax Action { get; set; }
 
         public bool Equals(IStatementLineSyntax? other)
         {

@@ -11,8 +11,8 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
 {
     public interface IVariableDeclaratorSyntax : IEquatable<IVariableDeclaratorSyntax>
     {
-        JassTypeSyntax Type { get; init; }
+        JassTypeSyntax Type { get; set; }
 
-        JassIdentifierNameSyntax IdentifierName { get; init; }
+        JassIdentifierNameSyntax IdentifierName { get; set; }
     }
 }

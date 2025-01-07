@@ -23,13 +23,13 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             ElseClause = elseClause;
         }
 
-        public IExpressionSyntax Condition { get; init; }
+        public IExpressionSyntax Condition { get; set; }
 
-        public JassStatementListSyntax Body { get; init; }
+        public JassStatementListSyntax Body { get; set; }
 
-        public ImmutableArray<JassElseIfClauseSyntax> ElseIfClauses { get; init; }
+        public ImmutableArray<JassElseIfClauseSyntax> ElseIfClauses { get; set; }
 
-        public JassElseClauseSyntax? ElseClause { get; init; }
+        public JassElseClauseSyntax? ElseClause { get; set; }
 
         public bool Equals(IStatementSyntax? other)
         {

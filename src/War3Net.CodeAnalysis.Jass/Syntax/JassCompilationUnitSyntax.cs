@@ -18,7 +18,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Declarations = declarations;
         }
 
-        public ImmutableArray<ITopLevelDeclarationSyntax> Declarations { get; init; }
+        public ImmutableArray<ITopLevelDeclarationSyntax> Declarations { get; set; }
 
         public bool Equals(JassCompilationUnitSyntax? other)
         {

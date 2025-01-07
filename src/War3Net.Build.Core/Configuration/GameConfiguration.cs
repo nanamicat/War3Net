@@ -30,7 +30,7 @@ namespace War3Net.Build.Configuration
 
         public string MapPath { get; set; }
 
-        public List<GameConfigurationPlayerInfo> PlayerInfo { get; init; } = new();
+        public List<GameConfigurationPlayerInfo> PlayerInfo { get; set; } = new();
 
         public override string ToString() => MapPath;
     }

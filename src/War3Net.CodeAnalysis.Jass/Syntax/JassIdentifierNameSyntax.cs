@@ -16,7 +16,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Name = name;
         }
 
-        public string Name { get; init; }
+        public string Name { get; set; }
 
         public virtual bool Equals(JassIdentifierNameSyntax? other)
         {

@@ -14,7 +14,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Value = value;
         }
 
-        public char Value { get; init; }
+        public char Value { get; set; }
 
         public bool Equals(IExpressionSyntax? other)
         {

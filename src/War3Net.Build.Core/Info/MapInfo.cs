@@ -126,17 +126,17 @@ namespace War3Net.Build.Info
         // Reforged (1.32)
         public GameDataVersion GameDataVersion { get; set; }
 
-        public List<PlayerData> Players { get; init; } = new();
+        public List<PlayerData> Players { get; set; } = new();
 
-        public List<ForceData> Forces { get; init; } = new();
+        public List<ForceData> Forces { get; set; } = new();
 
-        public List<UpgradeData> UpgradeData { get; init; } = new();
+        public List<UpgradeData> UpgradeData { get; set; } = new();
 
-        public List<TechData> TechData { get; init; } = new();
+        public List<TechData> TechData { get; set; } = new();
 
-        public List<RandomUnitTable>? RandomUnitTables { get; init; } = new();
+        public List<RandomUnitTable>? RandomUnitTables { get; set; } = new();
 
-        public List<RandomItemTable>? RandomItemTables { get; init; } = new();
+        public List<RandomItemTable>? RandomItemTables { get; set; } = new();
 
         public override string ToString() => FileName;
     }

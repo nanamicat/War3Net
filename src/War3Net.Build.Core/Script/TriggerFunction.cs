@@ -26,9 +26,9 @@ namespace War3Net.Build.Script
 
         public bool IsEnabled { get; set; }
 
-        public List<TriggerFunctionParameter> Parameters { get; init; } = new();
+        public List<TriggerFunctionParameter> Parameters { get; set; } = new();
 
-        public List<TriggerFunction> ChildFunctions { get; init; } = new();
+        public List<TriggerFunction> ChildFunctions { get; set; } = new();
 
         public override string ToString()
         {

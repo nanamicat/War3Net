@@ -14,7 +14,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             FunctionDeclarator = functionDeclarator;
         }
 
-        public JassFunctionDeclaratorSyntax FunctionDeclarator { get; init; }
+        public JassFunctionDeclaratorSyntax FunctionDeclarator { get; set; }
 
         public bool Equals(IDeclarationLineSyntax? other)
         {

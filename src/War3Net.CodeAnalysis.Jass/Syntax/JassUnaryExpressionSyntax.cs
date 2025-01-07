@@ -17,9 +17,9 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Expression = expression;
         }
 
-        public UnaryOperatorType Operator { get; init; }
+        public UnaryOperatorType Operator { get; set; }
 
-        public IExpressionSyntax Expression { get; init; }
+        public IExpressionSyntax Expression { get; set; }
 
         public bool Equals(IExpressionSyntax? other)
         {

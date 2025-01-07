@@ -25,7 +25,7 @@ namespace War3Net.Build.Audio
 
         public MapSoundsFormatVersion FormatVersion { get; set; }
 
-        public List<Sound> Sounds { get; init; } = new();
+        public List<Sound> Sounds { get; set; } = new();
 
         public override string ToString() => FileName;
     }

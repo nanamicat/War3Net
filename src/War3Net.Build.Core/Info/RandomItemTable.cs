@@ -24,7 +24,7 @@ namespace War3Net.Build.Info
 
         public string Name { get; set; }
 
-        public List<RandomItemSet> ItemSets { get; init; } = new();
+        public List<RandomItemSet> ItemSets { get; set; } = new();
 
         public override string ToString() => Name;
     }

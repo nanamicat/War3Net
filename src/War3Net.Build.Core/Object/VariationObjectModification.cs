@@ -24,9 +24,9 @@ namespace War3Net.Build.Object
 
         public int NewId { get; set; }
 
-        public List<int> Unk { get; init; } = new();
+        public List<int> Unk { get; set; } = new();
 
-        public List<VariationObjectDataModification> Modifications { get; init; } = new();
+        public List<VariationObjectDataModification> Modifications { get; set; } = new();
 
         public override string ToString() => NewId == 0 ? OldId.ToRawcode() : $"{NewId.ToRawcode()}:{OldId.ToRawcode()}";
     }

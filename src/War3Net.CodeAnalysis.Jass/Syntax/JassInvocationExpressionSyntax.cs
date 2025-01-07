@@ -15,9 +15,9 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Arguments = arguments;
         }
 
-        public JassIdentifierNameSyntax IdentifierName { get; init; }
+        public JassIdentifierNameSyntax IdentifierName { get; set; }
 
-        public JassArgumentListSyntax Arguments { get; init; }
+        public JassArgumentListSyntax Arguments { get; set; }
 
         public bool Equals(IExpressionSyntax? other)
         {

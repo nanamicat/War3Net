@@ -31,7 +31,7 @@ namespace War3Net.Build.Environment
 
         public bool Protected { get; set; }
 
-        public List<Region> Regions { get; init; } = new();
+        public List<Region> Regions { get; set; } = new();
 
         public override string ToString() => FileName;
     }

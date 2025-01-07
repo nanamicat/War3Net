@@ -17,7 +17,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Globals = globals;
         }
 
-        public ImmutableArray<IGlobalDeclarationSyntax> Globals { get; init; }
+        public ImmutableArray<IGlobalDeclarationSyntax> Globals { get; set; }
 
         public bool Equals(ITopLevelDeclarationSyntax? other)
         {

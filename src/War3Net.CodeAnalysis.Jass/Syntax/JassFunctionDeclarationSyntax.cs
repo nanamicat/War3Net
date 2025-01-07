@@ -15,9 +15,9 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Body = body;
         }
 
-        public JassFunctionDeclaratorSyntax FunctionDeclarator { get; init; }
+        public JassFunctionDeclaratorSyntax FunctionDeclarator { get; set; }
 
-        public JassStatementListSyntax Body { get; init; }
+        public JassStatementListSyntax Body { get; set; }
 
         public bool Equals(ITopLevelDeclarationSyntax? other)
         {

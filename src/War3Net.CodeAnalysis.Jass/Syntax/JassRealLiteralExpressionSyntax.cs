@@ -19,9 +19,9 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             FracPart = fracPart;
         }
 
-        public string IntPart { get; init; }
+        public string IntPart { get; set; }
 
-        public string FracPart { get; init; }
+        public string FracPart { get; set; }
 
         public bool Equals(IExpressionSyntax? other)
         {
@@ -55,7 +55,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Value = value;
         }
 
-        public float Value { get; init; }
+        public float Value { get; set; }
 
         public bool Equals(IExpressionSyntax? other)
         {

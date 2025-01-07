@@ -18,11 +18,11 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Right = right;
         }
 
-        public BinaryOperatorType Operator { get; init; }
+        public BinaryOperatorType Operator { get; set; }
 
-        public IExpressionSyntax Left { get; init; }
+        public IExpressionSyntax Left { get; set; }
 
-        public IExpressionSyntax Right { get; init; }
+        public IExpressionSyntax Right { get; set; }
 
         public bool Equals(IExpressionSyntax? other)
         {

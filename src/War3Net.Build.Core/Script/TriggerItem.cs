@@ -14,7 +14,7 @@ namespace War3Net.Build.Script
             Type = triggerItemType;
         }
 
-        public TriggerItemType Type { get; private init; }
+        public TriggerItemType Type { get; private set; }
 
         public string Name { get; set; }
 

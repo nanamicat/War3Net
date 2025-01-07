@@ -16,7 +16,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Comment = comment;
         }
 
-        public string Comment { get; init; }
+        public string Comment { get; set; }
 
         public bool Equals(ITopLevelDeclarationSyntax? other)
         {

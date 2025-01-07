@@ -26,7 +26,7 @@ namespace War3Net.Build.Import
 
         public ImportedFilesFormatVersion FormatVersion { get; set; }
 
-        public List<ImportedFile> Files { get; init; } = new();
+        public List<ImportedFile> Files { get; set; } = new();
 
         public override string ToString() => $"{FileExtension} file";
     }

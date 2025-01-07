@@ -37,9 +37,9 @@ namespace War3Net.Build.Environment
 
         public bool IsCustomTileset { get; set; }
 
-        public List<TerrainType> TerrainTypes { get; init; } = new();
+        public List<TerrainType> TerrainTypes { get; set; } = new();
 
-        public List<CliffType> CliffTypes { get; init; } = new();
+        public List<CliffType> CliffTypes { get; set; } = new();
 
         public uint Width { get; set; }
 
@@ -49,7 +49,7 @@ namespace War3Net.Build.Environment
 
         public float Bottom { get; set; }
 
-        public List<TerrainTile> TerrainTiles { get; init; } = new();
+        public List<TerrainTile> TerrainTiles { get; set; } = new();
 
         public float Right
         {

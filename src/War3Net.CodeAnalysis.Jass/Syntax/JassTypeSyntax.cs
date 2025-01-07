@@ -24,7 +24,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             TypeName = typeName;
         }
 
-        public JassIdentifierNameSyntax TypeName { get; init; }
+        public JassIdentifierNameSyntax TypeName { get; set; }
 
         public bool Equals(JassTypeSyntax? other)
         {

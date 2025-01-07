@@ -33,7 +33,7 @@ namespace War3Net.Build.Environment
 
         public uint Height { get; set; }
 
-        public List<PathingType> Cells { get; init; } = new();
+        public List<PathingType> Cells { get; set; } = new();
 
         public override string ToString() => FileName;
     }

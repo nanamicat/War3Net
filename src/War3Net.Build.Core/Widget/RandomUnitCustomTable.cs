@@ -18,6 +18,6 @@ namespace War3Net.Build.Widget
         {
         }
 
-        public List<RandomUnitTableUnit> RandomUnits { get; init; } = new();
+        public List<RandomUnitTableUnit> RandomUnits { get; set; } = new();
     }
 }

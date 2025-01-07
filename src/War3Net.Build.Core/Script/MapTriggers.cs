@@ -37,11 +37,11 @@ namespace War3Net.Build.Script
 
         public int GameVersion { get; set; }
 
-        public List<VariableDefinition> Variables { get; init; } = new();
+        public List<VariableDefinition> Variables { get; set; } = new();
 
-        public List<TriggerItem> TriggerItems { get; init; } = new();
+        public List<TriggerItem> TriggerItems { get; set; } = new();
 
-        public Dictionary<TriggerItemType, int> TriggerItemCounts { get; init; } = new();
+        public Dictionary<TriggerItemType, int> TriggerItemCounts { get; set; } = new();
 
         public override string ToString() => FileName;
     }

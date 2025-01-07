@@ -23,7 +23,7 @@ namespace War3Net.IO.Mpq
             ReadFrom(reader);
         }
 
-        public List<string> FileNames { get; init; } = new();
+        public List<string> FileNames { get; set; } = new();
 
         internal void ReadFrom(StreamReader reader)
         {

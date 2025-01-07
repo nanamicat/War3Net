@@ -63,9 +63,9 @@ namespace War3Net.Build.Widget
         /// </summary>
         public int HeroIntelligence { get; set; }
 
-        public List<InventoryItemData> InventoryData { get; init; } = new();
+        public List<InventoryItemData> InventoryData { get; set; } = new();
 
-        public List<ModifiedAbilityData> AbilityData { get; init; } = new();
+        public List<ModifiedAbilityData> AbilityData { get; set; } = new();
 
         public RandomUnitDataMode RandomDataMode => RandomData switch
         {

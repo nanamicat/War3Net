@@ -18,7 +18,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Arguments = arguments;
         }
 
-        public ImmutableArray<IExpressionSyntax> Arguments { get; init; }
+        public ImmutableArray<IExpressionSyntax> Arguments { get; set; }
 
         public bool Equals(JassArgumentListSyntax? other)
         {

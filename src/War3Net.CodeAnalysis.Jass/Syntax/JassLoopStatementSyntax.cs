@@ -14,7 +14,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Body = body;
         }
 
-        public JassStatementListSyntax Body { get; init; }
+        public JassStatementListSyntax Body { get; set; }
 
         public bool Equals(IStatementSyntax? other)
         {

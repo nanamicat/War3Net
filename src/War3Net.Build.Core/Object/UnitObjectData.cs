@@ -28,9 +28,9 @@ namespace War3Net.Build.Object
 
         public ObjectDataFormatVersion FormatVersion { get; set; }
 
-        public List<SimpleObjectModification> BaseUnits { get; init; } = new();
+        public List<SimpleObjectModification> BaseUnits { get; set; } = new();
 
-        public List<SimpleObjectModification> NewUnits { get; init; } = new();
+        public List<SimpleObjectModification> NewUnits { get; set; } = new();
 
         public override string ToString() => $"{FileExtension} file";
     }

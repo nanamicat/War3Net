@@ -18,11 +18,11 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             ReturnType = returnType;
         }
 
-        public JassIdentifierNameSyntax IdentifierName { get; init; }
+        public JassIdentifierNameSyntax IdentifierName { get; set; }
 
-        public JassParameterListSyntax ParameterList { get; init; }
+        public JassParameterListSyntax ParameterList { get; set; }
 
-        public JassTypeSyntax ReturnType { get; init; }
+        public JassTypeSyntax ReturnType { get; set; }
 
         public bool Equals(JassFunctionDeclaratorSyntax? other)
         {

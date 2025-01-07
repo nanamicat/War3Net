@@ -22,7 +22,7 @@ namespace War3Net.Build.Script
         {
         }
 
-        public List<TriggerString> Strings { get; init; } = new();
+        public List<TriggerString> Strings { get; set; } = new();
 
         public override string ToString() => $"{FileExtension} file";
     }

@@ -22,7 +22,7 @@ namespace War3Net.Build.Environment
         }
 
         // True = 0xff, false = 0x00
-        public List<byte> Cells { get; init; } = new();
+        public List<byte> Cells { get; set; } = new();
 
         public override string ToString() => FileName;
     }

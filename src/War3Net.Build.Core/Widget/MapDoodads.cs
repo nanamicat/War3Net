@@ -37,11 +37,11 @@ namespace War3Net.Build.Widget
 
         public bool UseNewFormat { get; set; }
 
-        public List<DoodadData> Doodads { get; init; } = new();
+        public List<DoodadData> Doodads { get; set; } = new();
 
         public SpecialDoodadVersion SpecialDoodadVersion { get; set; }
 
-        public List<SpecialDoodadData> SpecialDoodads { get; init; } = new();
+        public List<SpecialDoodadData> SpecialDoodads { get; set; } = new();
 
         public override string ToString() => FileName;
     }

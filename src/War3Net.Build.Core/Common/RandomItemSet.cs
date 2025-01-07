@@ -18,6 +18,6 @@ namespace War3Net.Build.Common
         {
         }
 
-        public List<RandomItemSetItem> Items { get; init; } = new();
+        public List<RandomItemSetItem> Items { get; set; } = new();
     }
 }

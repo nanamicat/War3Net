@@ -62,9 +62,9 @@ namespace War3Net.Build.Info
 
         public CampaignRace Race { get; set; }
 
-        public List<CampaignMapButton> MapButtons { get; init; } = new();
+        public List<CampaignMapButton> MapButtons { get; set; } = new();
 
-        public List<CampaignMap> Maps { get; init; } = new();
+        public List<CampaignMap> Maps { get; set; } = new();
 
         public override string ToString() => FileName;
     }

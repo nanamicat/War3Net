@@ -28,6 +28,6 @@ namespace War3Net.Build.Script
 
         public bool RunOnMapInit { get; set; }
 
-        public List<TriggerFunction> Functions { get; init; } = new();
+        public List<TriggerFunction> Functions { get; set; } = new();
     }
 }

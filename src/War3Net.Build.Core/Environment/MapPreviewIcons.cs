@@ -25,7 +25,7 @@ namespace War3Net.Build.Environment
 
         public MapPreviewIconsFormatVersion FormatVersion { get; set; }
 
-        public List<PreviewIcon> Icons { get; init; } = new();
+        public List<PreviewIcon> Icons { get; set; } = new();
 
         public override string ToString() => FileName;
     }

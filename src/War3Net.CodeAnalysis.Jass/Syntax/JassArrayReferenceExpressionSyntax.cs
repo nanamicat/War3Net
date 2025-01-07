@@ -15,9 +15,9 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Indexer = indexer;
         }
 
-        public JassIdentifierNameSyntax IdentifierName { get; init; }
+        public JassIdentifierNameSyntax IdentifierName { get; set; }
 
-        public IExpressionSyntax Indexer { get; init; }
+        public IExpressionSyntax Indexer { get; set; }
 
         public bool Equals(IExpressionSyntax? other)
         {

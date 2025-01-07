@@ -14,7 +14,7 @@ namespace War3Net.CodeAnalysis.Jass.Syntax
             Condition = condition;
         }
 
-        public IExpressionSyntax Condition { get; init; }
+        public IExpressionSyntax Condition { get; set; }
 
         public bool Equals(IStatementSyntax? other)
         {

@@ -33,7 +33,7 @@ namespace War3Net.Build.Script
 
         public CustomTextTrigger GlobalCustomScriptCode { get; set; }
 
-        public List<CustomTextTrigger> CustomTextTriggers { get; init; } = new();
+        public List<CustomTextTrigger> CustomTextTriggers { get; set; } = new();
 
         public override string ToString() => FileName;
     }
